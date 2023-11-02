@@ -1,20 +1,11 @@
 void main(List<String> arguments) {
-  final name = 'Santiago';
-  final numbers = [10, 11, 12, 13, 14, 15];
-  final products = <int, String>{
-    0: "Mac mini",
-    1: "iPhone"
-  };
+  String? name;
 
-  for (final p in products.entries) {
-    print("Key: ${p.key}: Value: ${p.value}");
-  }
+  // if (name != null) {
+  //   print(name.length);
+  // }
+  print(name?.length);
 
-  for (int e in numbers) {
-    print(e);
-  }
-
-  for (int index = 0; index < name.length; index++) {
-    print(name[index]);
-  }
+  name = null;
+  print(name);
 }
