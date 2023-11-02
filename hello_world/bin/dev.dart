@@ -1,16 +1,11 @@
 void main(List<String> arguments) {
   
-  int index = 0;
+  int index = 10;
 
-  while (index <= 60) {
+  do {
     print(index);
-    if (index % 70 == 0) {
-      print("Hi");
-      break;
-    }
     index++;
-  }
-
-  print("Hola");
+  } while (index < 100);
   
+  print("Hello world");
 }
