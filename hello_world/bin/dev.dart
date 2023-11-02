@@ -1,24 +1,32 @@
 void main(List<String> arguments) {
+  // final currentDate = DateTime.now();
+  // final weekDay = currentDate.weekday;
 
-  // final weekDay = 6;
-  // final days = 30;
+  final weekDay = DateTime.now().weekday;
 
-  // if (weekDay >= 1 && weekDay <= 7) {
-  //   if (days >= 30 && (weekDay == 6 || weekDay == 7)) {
-  //     print("Free day");
-  //   } else {
-  //     print("😒");
-  //   }
-  // } else {
-  //   print("Invalid day of the week");
-  // }
-
-
-  final price1 = 50.99, price2 = 19.99;
-
-  final areEquals = price1 == price2;
-
-  if (true) {
-    print('True');
+  switch (weekDay) {
+    case 1:
+      print("Lunes");
+      break;
+    case 2:
+      print("Martes");
+      break;
+    case 3:
+      print("Miercoles");
+      break;
+    case 4:
+      print("Jueves");
+      break;
+    case 5:
+      print("Viernes");
+      break;
+    case 6:
+      print("Sabado");
+      break;
+    case 7:
+      print("Domingo");
+      break;
+    default:
+      print("Dia inválido");
   }
 }
