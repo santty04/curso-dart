@@ -1,32 +1,16 @@
 void main(List<String> arguments) {
-  // final currentDate = DateTime.now();
-  // final weekDay = currentDate.weekday;
+  
+  int index = 0;
 
-  final weekDay = DateTime.now().weekday;
-
-  switch (weekDay) {
-    case 1:
-      print("Lunes");
+  while (index <= 60) {
+    print(index);
+    if (index % 70 == 0) {
+      print("Hi");
       break;
-    case 2:
-      print("Martes");
-      break;
-    case 3:
-      print("Miercoles");
-      break;
-    case 4:
-      print("Jueves");
-      break;
-    case 5:
-      print("Viernes");
-      break;
-    case 6:
-      print("Sabado");
-      break;
-    case 7:
-      print("Domingo");
-      break;
-    default:
-      print("Dia inválido");
+    }
+    index++;
   }
+
+  print("Hola");
+  
 }
