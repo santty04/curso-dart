@@ -1,36 +1,31 @@
 void main(List<String> arguments) {
-  
-  final lulu = Pet();
-  lulu.name = "Lulú";
-  lulu.age = 7;
 
-  final luluCopy = Pet();
-  luluCopy.name = "Lulu";
-  luluCopy.age = 7;
+  final lulu = Pet(age: 5, name: 'lulu');
 
-  print(lulu.hashCode);
-  print(luluCopy.hashCode);
+  final luna = Pet.fromBirthday(name: 'Luna', birthdayAsString: '2020-05-18');
 
-  print(lulu == luluCopy);
+
+  print(lulu);
+  print(luna);
 }
 
 class Pet{
-  String? name;
-  int? age;
+  String name;
+  int age;
 
-  // @override
-  // bool operator ==(Object other){
-  //   if (hashCode!= other.hashCode){
-  //     return false;
-  //   }
-  //   if(other is Pet) {
-  //     return other.name == name && other.age == age;
-  //   }
-  //   return false;
-  // }
+  Pet({required this.name, required this.age});
 
-  // @override
-  // int get hashCode{
-  //   return name.hashCode^age.hashCode;
-  // }
+  factory Pet.fromBirthday({required String name, required String birthdayAsString}) {
+    final birthday = DateTime.parse(birthdayAsString);
+    final currentDate = DateTime.now();
+
+    final days = currentDate.difference(birthday).inDays;
+    final age = (days/365).round();
+    return Pet(name: name, age: age);
+  }
+
+  @override
+  String toString() {
+    return "name: $name, age: $age";
+  }
 }
