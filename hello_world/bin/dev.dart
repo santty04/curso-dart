@@ -1,11 +1,36 @@
 void main(List<String> arguments) {
+  
+  final lulu = Pet();
+  lulu.name = "Lulú";
+  lulu.age = 7;
+
+  final luluCopy = Pet();
+  luluCopy.name = "Lulu";
+  luluCopy.age = 7;
+
+  print(lulu.hashCode);
+  print(luluCopy.hashCode);
+
+  print(lulu == luluCopy);
+}
+
+class Pet{
   String? name;
+  int? age;
 
-  // if (name != null) {
-  //   print(name.length);
+  // @override
+  // bool operator ==(Object other){
+  //   if (hashCode!= other.hashCode){
+  //     return false;
+  //   }
+  //   if(other is Pet) {
+  //     return other.name == name && other.age == age;
+  //   }
+  //   return false;
   // }
-  print(name?.length);
 
-  name = null;
-  print(name);
+  // @override
+  // int get hashCode{
+  //   return name.hashCode^age.hashCode;
+  // }
 }
