@@ -8,10 +8,13 @@ void main(List<String> arguments) {
   
   print(lulu.name);
   print(lulu.age);
+  print(lulu.updatedAt);
   lulu.setName('Luna');
   lulu.setAge(4);
   print(lulu.name);
   print(lulu.age);
+  print(lulu.updatedAt);
+
 
 }
 
