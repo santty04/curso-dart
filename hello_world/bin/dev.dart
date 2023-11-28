@@ -1,20 +1,10 @@
 import 'package:hello_world/models/pet.dart';
+import 'package:hello_world/utils/api_key.dart';
 
 void main(List<String> arguments) {
-  final lulu = Pet(
-    name: 'Lulu',
-    age: 1,
-  );
+
+  Pet.updateCounter(500);
+  print(Pet.counter);
   
-  print(lulu.name);
-  print(lulu.age);
-  print(lulu.updatedAt);
-  lulu.setName('Luna');
-  lulu.setAge(4);
-  print(lulu.name);
-  print(lulu.age);
-  print(lulu.updatedAt);
-
-
 }
 

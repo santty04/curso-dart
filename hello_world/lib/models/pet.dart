@@ -1,55 +1,37 @@
+import 'package:hello_world/utils/api_key.dart';
+
 class Pet{
-  String _name;
-  int _age;
 
-  DateTime get updatedAt {
-    return _history.updatedAt;
+  static int _counter = 0;
+
+  static int get counter {
+    return _counter;
   }
-
   
+  final String name;
+  final int age;  
 
-  String get name {
-    return _name;
-  }
-  int get age {
-    return _age;
-  }
-
-  Pet({required String name, required int age}) : _name = name, _age = age;
-
-  void setName(String name) {
-    _name = name;
-    _sendReport();
-    _history.update();
+  Pet({required this.name, required this.age}){
+    print(apiKey);
   }
 
-  void setAge(int age) {
-    _age = age;
-    _history.update();
+  Pet copyWith({
+    String? name,
+    int? age
+  }) {
+    apiKey;
+    return Pet(
+      name: name ?? this.name,
+      age: age ?? this.age,
+    );
   }
 
-  void _sendReport() {
-    print("😒");
+  static void updateCounter(int counter) {
+    _counter = counter;
   }
 
   @override
   String toString() {
-    return "name: $_name, age: $_age";
-  }
-}
-
-class _History{
-  final DateTime createdAt = DateTime.now();
-  final List<DateTime> _items = [];
-
-  DateTime get updatedAt {
-    if (_items.isEmpty) {
-      return createdAt;
-    }
-    return _items.last;
-  }
-
-  void update() {
-    _items.add(DateTime.now());
+    return "name: $name, age: $age";
   }
 }
