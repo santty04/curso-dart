@@ -2,23 +2,14 @@ import 'package:hello_world/models/pet.dart';
 import 'package:hello_world/utils/api_key.dart';
 
 void main(List<String> arguments) {
-  print(Status.values);
+ final lazy = Dog(name: 'lazy', age: 10, legs: 4);
 
-  final orderStatus = Status.created;
+ final dory = Fish(name: 'Dory', age: 1, fins: 3);
 
-  print(orderStatus);
+ lazy.legs;
+ lazy.run();
+ dory.fins;
+ dory.swim();
 }
 
-enum Status {
-  created,
-  ready,
-  onTheWay,
-  delivered,
-}
 
-// class Status {
-//   static const int created = 0;
-//   static const int ready = 1;
-//   static const int onTheWay = 2;
-//   static const int delivered = 3;
-// }

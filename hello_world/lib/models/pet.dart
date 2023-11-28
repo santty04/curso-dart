@@ -1,37 +1,42 @@
 import 'package:hello_world/utils/api_key.dart';
 
-class Pet{
-
-  static int _counter = 0;
-
-  static int get counter {
-    return _counter;
-  }
-  
+class Pet {
   final String name;
-  final int age;  
+  final int age;
 
-  Pet({required this.name, required this.age}){
-    print(apiKey);
+  Pet({required this.name, required this.age});
+}
+
+class Dog extends Pet {
+
+  final int legs;
+
+  Dog({
+    required String name,
+    required int age,
+    required this.legs,
+  }): super(name: name, age: age);
+
+  void run() {
+    print("running");
   }
 
-  Pet copyWith({
-    String? name,
-    int? age
-  }) {
-    apiKey;
-    return Pet(
-      name: name ?? this.name,
-      age: age ?? this.age,
-    );
+  void jump() {
+    print('jumping');
   }
+}
 
-  static void updateCounter(int counter) {
-    _counter = counter;
-  }
+class Fish extends Pet {
 
-  @override
-  String toString() {
-    return "name: $name, age: $age";
+  final int fins;
+
+  Fish({
+    required String name,
+    required int age,
+    required this.fins,
+  }): super(name: name, age: age);
+
+  void swim() {
+    print('Swimming');
   }
 }
