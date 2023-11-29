@@ -1,15 +1,26 @@
 import 'package:hello_world/models/pet.dart';
-import 'package:hello_world/utils/api_key.dart';
 
 void main(List<String> arguments) {
- final lazy = Dog(name: 'lazy', age: 10, legs: 4);
-
- final dory = Fish(name: 'Dory', age: 1, fins: 3);
-
- lazy.legs;
- lazy.run();
- dory.fins;
- dory.swim();
+  final dolphin = Dolphin();
+  final duck = Duck();
+  final shark = Shark();
+  final bat = Bat();
+  final cat = Cat();
+  final dove = Dove();
+  final flyingFish = FlyingFish();
+  
+  dolphin.swim();
+  duck.swim();
+  duck.walk();
+  duck.fly();
+  shark.swim();
+  bat.walk();
+  bat.fly();
+  cat.walk();
+  dove.walk();
+  dove.fly();
+  flyingFish.swim();
+  flyingFish.fly();
 }
 
 

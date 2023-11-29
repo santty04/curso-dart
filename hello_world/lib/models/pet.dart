@@ -1,42 +1,45 @@
 import 'package:hello_world/utils/api_key.dart';
 
-class Pet {
-  final String name;
-  final int age;
+abstract class Animal {
 
-  Pet({required this.name, required this.age});
 }
 
-class Dog extends Pet {
+abstract class Fish extends Animal {
 
-  final int legs;
+}
+abstract class Bird extends Animal {
 
-  Dog({
-    required String name,
-    required int age,
-    required this.legs,
-  }): super(name: name, age: age);
+}
+abstract class Mammal extends Animal {
 
-  void run() {
-    print("running");
-  }
-
-  void jump() {
-    print('jumping');
-  }
 }
 
-class Fish extends Pet {
+class Dolphin extends Mammal with SwimMixin {}
 
-  final int fins;
+class Bat extends Mammal with WalkMixin, FlyMixin{}
 
-  Fish({
-    required String name,
-    required int age,
-    required this.fins,
-  }): super(name: name, age: age);
+class Cat extends Mammal with WalkMixin {}
 
-  void swim() {
-    print('Swimming');
+class Dove extends Bird with WalkMixin, FlyMixin {}
+
+class Duck extends Bird with SwimMixin, WalkMixin, FlyMixin {}
+
+class Shark extends Fish with SwimMixin {}
+
+class FlyingFish extends Fish with FlyMixin, SwimMixin {}
+
+mixin WalkMixin on Animal {
+  void walk(){
+    print('$runtimeType Walking');
+  }
+}
+mixin SwimMixin on Animal {
+  void swim(){
+    print('$runtimeType Swimming');
+  }
+}
+mixin FlyMixin on Animal {
+  void fly(){
+    print('$runtimeType Flying');
   }
 }
