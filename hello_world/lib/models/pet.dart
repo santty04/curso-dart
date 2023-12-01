@@ -29,17 +29,11 @@ class Shark extends Fish with SwimMixin {}
 class FlyingFish extends Fish with FlyMixin, SwimMixin {}
 
 mixin WalkMixin on Animal {
-  void walk(){
-    print('$runtimeType Walking');
-  }
+  void walk() => print('$runtimeType Walking');
 }
 mixin SwimMixin on Animal {
-  void swim(){
-    print('$runtimeType Swimming');
-  }
+  void swim() => print('$runtimeType Swimming');
 }
 mixin FlyMixin on Animal {
-  void fly(){
-    print('$runtimeType Flying');
-  }
+  void fly() => print('$runtimeType Flying');
 }

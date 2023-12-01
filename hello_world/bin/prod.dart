@@ -11,8 +11,6 @@ void main(List<String> arguments) async {
 Future<String> sleep(int milliseconds) {
   Completer<String> completer = Completer();
   
-  Timer(Duration(milliseconds: milliseconds), () {
-    completer.complete('done');
-  });
+  Timer(Duration(milliseconds: milliseconds), () => completer.complete('done'));
   return completer.future;
 }

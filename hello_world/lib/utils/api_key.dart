@@ -1,9 +1,6 @@
 String _apiKey = "";
 
-String get apiKey {
-  return _apiKey;
-}
+String get apiKey => _apiKey;
 
-void updateApiKey(String apiKey) {
-  _apiKey = apiKey;
-}
+
+void updateApiKey(String apiKey) => _apiKey = apiKey;
